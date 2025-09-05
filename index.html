@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дизайн-ресерч от студии Partdirector</title>
+  <meta name="description" content="Помогаем маркетологам и дизайн-командам быстро собирать конкурентный анализ, актуальные референсы и тренды. Готовые отчёты в PDF + Figma за 2-4 дня.">
+  <meta name="keywords" content="дизайн ресерч, конкурентный анализ, референсы, дизайн тренды, design spotlight, partdirector">
+  <meta property="og:title" content="Дизайн-ресерч / Студия Partdirector">
+  <meta property="og:description" content="Помогаем маркетологам и дизайн-командам быстро собирать конкурентный анализ, актуальные референсы и тренды.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://partdirector.ch">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Дизайн-ресерч / Студия пPartdirector">
+  <meta name="twitter:description" content="Помогаем маркетологам и дизайн-командам быстро собирать конкурентный анализ, актуальные референцы и тренды.">
+  <link rel="canonical" href="https://partdirector.ch">
+  <style>
+    @font-face {
+      font-family: 'Grammatika';
+      src: url('GramatikaBold.woff') format('woff'),
+           url('GramatikaBold.otf') format('opentype');
+      font-weight: bold;
+      font-display: swap;
+    }
+    
+    @font-face {
+      font-family: 'Kommuna';
+      src: url('KommunaNormal.woff') format('woff'),
+           url('KommunaNormal.otf') format('opentype');
+      font-weight: normal;
+      font-display: swap;
+    }
+    
+    :root{
+      --pad: clamp(20px, 3vw, 48px);
+      --text: #1a1a1a;
+      --muted: #777;
+      --bg: #f2f2f3;
+      --accent: #1a1a1a;
+    }
+    
+    body {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    body.inverted {
+      --text: #f2f2f3;
+      --muted: #999;
+      --bg: #1a1a1a;
+      --accent: #f2f2f3;
+      background-color: #1a1a1a;
+      color: #f2f2f3;
+    }
+    
+    /* Hide upper content when last section is active */
+    .section-above-last {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    body.inverted .section-above-last {
+      opacity: 0;
+      transform: translateY(-20px);
+      pointer-events: none;
+    }
+    
+    * { box-sizing: border-box; }
+    html, body { 
+      height: 100%; 
+      scroll-behavior: smooth;
+    }
+    
+    html {
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: smooth;
+    }
+    
+    /* Enhanced scrolling momentum */
+    body {
+      margin: 0;
+      font-family: 'Kommuna', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.35;
+      color: var(--text);
+      background: var(--bg);
+      scroll-snap-type: y proximity;
+      overscroll-behavior-y: contain;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    .left {
+      padding: var(--pad);
+      padding-right: calc(var(--pad) / 2);
+      max-width: 800px;
+    }
+          .left section {
+        padding: 6rem 0;
+      }
+      .left section:first-child { border-top: 0; padding-top: var(--pad); }
+      .left section:last-child {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+    
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      font-family: 'Kommuna', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      transition: color 0.3s ease;
+    }
+    h1, h2 {
+      margin: 0 0 1.5rem 0;
+      line-height: 1;
+      letter-spacing: normal;
+      font-family: 'Grammatika', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    h1 { font-size: clamp(42px, 6vw, 76px); }
+    h2 { font-size: clamp(28px, 3.5vw, 44px); }
+    p, li { 
+      font-size: clamp(16px, 1.5vw, 18px); 
+      color: var(--text);
+      font-family: 'Kommuna', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      transition: color 0.3s ease;
+    }
+    
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom-color 0.2s ease, color 0.2s ease;
+    }
+    
+    /* Animated links with scroll-based color changes */
+    a[href*="partdirector.ch"] {
+      color: hsl(220, 70%, 50%); /* Blue base */
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a[href*="partdirector.ch"]:hover {
+      border-bottom-color: currentColor;
+    }
+    
+    a[href*="spotlight.partdirector.ch"] {
+      color: hsl(160, 85%, 40%); /* Green base */
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a[href*="spotlight.partdirector.ch"]:hover {
+      border-bottom-color: currentColor;
+    }
+    
+    a[href*="ony.design"] {
+      color: hsl(0, 75%, 50%); /* Red base */
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a[href*="ony.design"]:hover {
+      border-bottom-color: currentColor;
+    }
+    
+    a[href*="artlebedev.ru"] {
+      color: hsl(260, 70%, 50%); /* Purple base */
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a[href*="artlebedev.ru"]:hover {
+      border-bottom-color: currentColor;
+    }
+    
+    a[href*="t.me"] {
+      color: hsl(190, 85%, 40%); /* Cyan base */
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a[href*="t.me"]:hover {
+      border-bottom-color: currentColor;
+    }
+    
+    a[href*="mailto"] {
+      color: hsl(25, 85%, 50%); /* Orange base */
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a[href*="mailto"]:hover {
+      border-bottom-color: currentColor;
+    }
+    
+    /* Default for any other links */
+    a:not([href*="partdirector.ch"]):not([href*="spotlight.partdirector.ch"]):not([href*="ony.design"]):not([href*="artlebedev.ru"]):not([href*="t.me"]):not([href*="mailto"]) {
+      color: var(--accent);
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a:not([href*="partdirector.ch"]):not([href*="spotlight.partdirector.ch"]):not([href*="ony.design"]):not([href*="artlebedev.ru"]):not([href*="t.me"]):not([href*="mailto"]):hover {
+      border-bottom-color: var(--accent);
+    }
+    
+    /* Contact Overlay */
+    .contact-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    
+    .contact-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .close-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      line-height: 1;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    
+    .close-btn:hover {
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
+    
+    .contact-content {
+      text-align: center;
+      color: #fff;
+      transform: translateY(20px);
+      transition: transform 0.4s ease 0.1s;
+    }
+    
+    .contact-overlay.active .contact-content {
+      transform: translateY(0);
+    }
+    
+    .contact-header {
+      font-family: 'Grammatika', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      margin: 0 0 3rem 0;
+      font-weight: bold;
+      line-height: 1;
+    }
+    
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .contact-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      padding: 1.5rem 2rem;
+      border: 2px solid #333;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      min-width: 280px;
+    }
+    
+    .contact-link:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-2px);
+    }
+    
+    .contact-method {
+      font-family: 'Kommuna', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #999;
+      margin-bottom: 0.5rem;
+    }
+    
+    .contact-handle {
+      font-family: 'Kommuna', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    @media (max-width: 768px) {
+      .close-btn {
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+      }
+      
+      .contact-header {
+        margin-bottom: 2rem;
+      }
+      
+      .contact-link {
+        min-width: 240px;
+        padding: 1.2rem 1.5rem;
+      }
+    }
+    ul { padding-left: 1.2em; margin: .5rem 0 0 0; }
+    li { margin-bottom: 0.5rem; }
+    .cta {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 16px 24px;
+      border: none;
+      background: var(--accent);
+      color: var(--bg);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 0;
+      font-family: 'Kommuna', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .cta-text {
+      display: inline-block;
+      color: var(--bg);
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform-origin: center;
+    }
+    .cta:hover { 
+      background: #0f0f0f; 
+      color: var(--bg);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .cta:hover .cta-text {
+      transform: scale(1.02) translateY(-0.5px);
+    }
+    .price {
+      display: grid;
+      gap: .6rem;
+      margin: 1rem 0 2rem;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid #e6e6e6;
+      background: #fff;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    
+    body.inverted .price {
+      border: 1px solid #333;
+      background: #2a2a2a;
+    }
+    .price b { 
+      font-size: 18px;
+      font-family: 'Kommuna', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .price span {
+      font-family: 'Kommuna', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    
+    .format {
+      margin: 1.5rem 0 2.5rem;
+      border: none;
+      border-radius: 20px;
+      background: #fff;
+      overflow: hidden;
+      transition: background-color 0.3s ease;
+    }
+    
+    body.inverted .format {
+      background: #2a2a2a;
+    }
+    .format summary {
+      padding: 1.2rem 1.4rem;
+      cursor: pointer;
+      font-family: 'Kommuna', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      list-style: none;
+      outline: none;
+      transition: background-color 0.2s ease;
+    }
+    .format summary::-webkit-details-marker {
+      display: none;
+    }
+    .format summary::after {
+      content: '+';
+      float: right;
+      font-size: 20px;
+      font-weight: bold;
+      color: #666;
+      transition: transform 0.3s ease, color 0.2s ease;
+    }
+    .format[open] summary::after {
+      content: '−';
+      transform: rotate(180deg);
+      color: #333;
+    }
+    .format-content {
+      padding: 0 1.4rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+    }
+    .format[open] .format-content {
+      max-height: 500px;
+      padding: 1.4rem 1.4rem;
+    }
+    .format-content p {
+      margin: 0.8rem 0;
+      font-family: 'Kommuna', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .format-content p:first-child {
+      margin-top: 0;
+    }
+    .format-content ul {
+      margin: 0.5rem 0;
+      padding-left: 1.2em;
+    }
+    .format-content li {
+      font-family: 'Kommuna', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0.3rem 0;
+    }
+    .format-content em {
+      color: var(--muted);
+      font-style: italic;
+    }
+    
+    /* Footer */
+          .footer {
+        padding: 0;
+        text-align: left;
+      }
+    .footer p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+      font-family: 'Kommuna', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .right {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      border-left: none;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .desk-image {
+      width: 100%;
+      height: 100%;
+      opacity: 0.9;
+      transition: all 0.3s ease;
+      object-fit: cover;
+      object-position: center;
+    }
+
+  </style>
+</head>
+<body>
+  <main class="split" role="main">
+    <div class="left">
+      <section class="block section-above-last">
+        <h1>Дизайн-ресерч</h1>
+        <p>Мы&nbsp;помогаем маркетологам и&nbsp;дизайн-командам быстро собирать контекст: конкурентный ландшафт, актуальные референсы, тренды.</p>
+        <p>Результат&nbsp;— готовый отчёт в&nbsp;презентационном формате с&nbsp;выводами и&nbsp;аргументами, которые можно сразу показать коллегам и&nbsp;руководству.</p>
+        <a class="cta contact-btn" href="#"><span class="cta-text">Обсудить проект</span></a>
+      </section>
+      <section class="block section-above-last">
+        <div class="eyebrow">Проблема</div>
+        <p>Чтобы запустить проект и&nbsp;сделать его качественно, нужно собрать контекст: изучить конкурентов, найти актуальные референсы, посмотреть на&nbsp;свежие тренды. На&nbsp;это уходит много времени и&nbsp;сил&nbsp;— команды неделями ищут примеры, собирают презентации, формулируют аргументы. В&nbsp;итоге процесс подготовки растягивается, а&nbsp;запуск проекта замедляется.</p>
+      </section>
+      <section class="block section-above-last">
+        <div class="eyebrow">Наше решение</div>
+        <p>Мы&nbsp;в&nbsp;студии <a href="https://partdirector.ch" target="_blank" rel="noopener">Partdirector</a> разработали инструмент <a href="https://spotlight.partdirector.ch" target="_blank" rel="noopener">Design Spotlight</a>. Это библиотека свежих кейсов сотен дизайн-студий по&nbsp;всему миру, которая ежедневно пополняется новыми проектами.</p>
+        <p>С&nbsp;его помощью мы&nbsp;формируем подборку именно под&nbsp;ваш запрос, добавляем конкурентный анализ и&nbsp;краткие выводы. В&nbsp;итоге вы&nbsp;получаете не&nbsp;просто коллекцию картинок, а&nbsp;готовый материал для аргументации&nbsp;— в&nbsp;формате PDF&nbsp;+ Figma, который можно сразу показывать команде и&nbsp;руководству.</p>
+      </section>
+      <section class="block section-above-last">
+        <div class="eyebrow">Форматы</div>
+        <details class="format">
+          <summary><strong>Быстрый скан&nbsp;— 80&nbsp;000&nbsp;₽</strong></summary>
+          <div class="format-content">
+            <p><strong>Срок:</strong> 2&nbsp;дня</p>
+            <p><strong>Вы&nbsp;получаете:</strong></p>
+            <ul>
+              <li>Подборку актуальных референсов</li>
+              <li>Краткий инсайт-саммари с&nbsp;выводами</li>
+              <li>Презентацию в&nbsp;PDF&nbsp;+ Figma, готовую для команды и&nbsp;руководства</li>
+            </ul>
+            <p><em>Подходит для быстрых решений, проверки идей, внутренних встреч</em></p>
+        </div>
+        </details>
+        <details class="format">
+          <summary><strong>Полный отчёт&nbsp;— 180&nbsp;000&nbsp;₽</strong></summary>
+          <div class="format-content">
+            <p><strong>Срок:</strong> 4&nbsp;дня</p>
+            <p><strong>Вы&nbsp;получаете:</strong></p>
+            <ul>
+              <li>Конкурентный ландшафт с&nbsp;чёткой структурой</li>
+              <li>Подборку ключевых референсов с&nbsp;комментариями</li>
+              <li>Стратегическую рамку: как использовать выводы для запуска проекта</li>
+              <li>Полноценную презентацию (PDF&nbsp;+ Figma)</li>
+            </ul>
+            <p><em>Подходит для защиты бюджета, подготовки к&nbsp;редизайну продукта, обоснования маркетинговой кампании</em></p>
+        </div>
+        </details>
+      </section>
+      <section class="block section-above-last">
+        <div class="eyebrow">Почему доверяют</div>
+        <ul>
+          <li>Опыт в&nbsp;разных ролях: работали и&nbsp;в&nbsp;больших компаниях (Яндекс: Авто.ру, Яндекс Пэй, Яндекс Сплит), и&nbsp;на&nbsp;стороне исполнителя (студии ONY и&nbsp;Студия Артемия Лебедева)</li>
+          <li>Знаем, как решаются задачи с&nbsp;разными бюджетами и&nbsp;масштабами проектов</li>
+          <li>Создали собственный инструмент <a href="https://spotlight.partdirector.ch" target="_blank" rel="noopener">Design Spotlight</a>, который ежедневно собирает новые проекты ведущих студий</li>
+          <li>В&nbsp;базе уже 15&nbsp;000+ кейсов от&nbsp;350&nbsp;студий, и&nbsp;коллекция постоянно растёт</li>
+          <li>Делаем готовые отчёты за&nbsp;2–4&nbsp;дня&nbsp;— сразу в&nbsp;формате, удобном для презентации</li>
+        </ul>
+      </section>
+      <section class="block" id="order">
+        <div class="eyebrow">Давайте поговорим</div>
+        <h2>Подготовьте сильные аргументы и&nbsp;получите готовый контекст без долгих поисков.</h2>
+        <a class="cta contact-btn" href="#"><span class="cta-text">Обсудить проект</span></a>
+      </section>
+      
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Студия Partdirector, 2025</p>
+      </footer>
+    </div>
+
+    <aside class="right" aria-hidden="true" role="complementary">
+      <img src="office-desk.png" alt="Office desk with laptop and coffee" class="desk-image">
+    </aside>
+  </main>
+  
+  <!-- Contact Overlay -->
+  <div class="contact-overlay" id="contactOverlay">
+    <button class="close-btn" id="closeBtn">×</button>
+    <div class="contact-content">
+      <h2 class="contact-header">Напишите нам</h2>
+      <div class="contact-links">
+        <a href="https://t.me/sashnovikova" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-method">Телеграм</span>
+          <span class="contact-handle">@sashnovikova</span>
+        </a>
+        <a href="mailto:sasha@partdirector.ch" class="contact-link">
+          <span class="contact-method">Почта</span>
+          <span class="contact-handle">sasha@partdirector.ch</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Color inversion animation on scroll to last section
+    function initColorInversion() {
+      const lastSection = document.getElementById('order');
+      const body = document.body;
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Last section is visible, invert colors
+            body.classList.add('inverted');
+          } else {
+            // Last section is not visible, use normal colors
+            body.classList.remove('inverted');
+          }
+        });
+      }, {
+        threshold: 0.5 // Trigger when 50% of the section is visible
+      });
+      
+      observer.observe(lastSection);
+    }
+    
+    // Initialize color inversion on page load
+    window.addEventListener('load', initColorInversion);
+    
+    // CTA text - no animation
+    
+    // Contact overlay functionality
+    const contactOverlay = document.getElementById('contactOverlay');
+    const contactBtns = document.querySelectorAll('.contact-btn');
+    const closeBtn = document.getElementById('closeBtn');
+    
+    function openContactOverlay() {
+      contactOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeContactOverlay() {
+      contactOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    // Add click listeners to contact buttons
+    contactBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openContactOverlay();
+      });
+    });
+    
+    // Close button functionality
+    closeBtn.addEventListener('click', closeContactOverlay);
+    
+    // Close on overlay background click
+    contactOverlay.addEventListener('click', (e) => {
+      if (e.target === contactOverlay) {
+        closeContactOverlay();
+      }
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && contactOverlay.classList.contains('active')) {
+        closeContactOverlay();
+      }
+    });
+    
+    // Scroll-based color animation for links
+    function updateLinkColors() {
+      const scrollProgress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      const hueShift = scrollProgress * 60; // 60 degrees max shift
+      
+      // Update each link type with different base hues
+      const partdirectorLinks = document.querySelectorAll('a[href*="partdirector.ch"]:not([href*="spotlight"])');
+      partdirectorLinks.forEach(link => {
+        const newHue = (220 + hueShift) % 360;
+        link.style.color = `hsl(${newHue}, 70%, 50%)`;
+      });
+      
+      const spotlightLinks = document.querySelectorAll('a[href*="spotlight.partdirector.ch"]');
+      spotlightLinks.forEach(link => {
+        const newHue = (160 + hueShift * 1.2) % 360;
+        link.style.color = `hsl(${newHue}, 85%, 40%)`;
+      });
+      
+      const onyLinks = document.querySelectorAll('a[href*="ony.design"]');
+      onyLinks.forEach(link => {
+        const newHue = (0 + hueShift * 0.8) % 360;
+        link.style.color = `hsl(${newHue}, 75%, 50%)`;
+      });
+      
+      const artLinks = document.querySelectorAll('a[href*="artlebedev.ru"]');
+      artLinks.forEach(link => {
+        const newHue = (260 + hueShift * 1.5) % 360;
+        link.style.color = `hsl(${newHue}, 70%, 50%)`;
+      });
+      
+      const telegramLinks = document.querySelectorAll('a[href*="t.me"]');
+      telegramLinks.forEach(link => {
+        const newHue = (190 + hueShift * 0.7) % 360;
+        link.style.color = `hsl(${newHue}, 85%, 40%)`;
+      });
+      
+      const emailLinks = document.querySelectorAll('a[href*="mailto"]');
+      emailLinks.forEach(link => {
+        const newHue = (25 + hueShift * 1.3) % 360;
+        link.style.color = `hsl(${newHue}, 85%, 50%)`;
+      });
+    }
+    
+    // Throttled scroll listener for performance
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) return;
+      scrollTimeout = setTimeout(() => {
+        updateLinkColors();
+        scrollTimeout = null;
+      }, 16); // ~60fps
+    });
+    
+    // Initial color update
+    updateLinkColors();
+  </script>
+</body>
+</html>

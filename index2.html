@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дизайн-ресерч от студииPartdirector</title>
+  <meta name="description" content="Помогаем маркетологам и дизайн-командам быстро собирать конкурентный анализ, актуальные референсы и тренды. Готовые отчёты в PDF + Figma за 2-4 дня.">
+  <meta name="keywords" content="дизайн ресерч, конкурентный анализ, референсы, дизайн тренды, design spotlight, partdirector">
+  <meta property="og:title" content="Дизайн-ресерч / Студия Partdirector">
+  <meta property="og:description" content="Помогаем маркетологам и дизайн-командам быстро собирать конкурентный анализ, актуальные референсы и тренды.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://partdirector.ch">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Дизайн-ресерч / Студия пPartdirector">
+  <meta name="twitter:description" content="Помогаем маркетологам и дизайн-командам быстро собирать конкурентный анализ, актуальные референцы и тренды.">
+  <link rel="canonical" href="https://partdirector.ch">
+  <style>
+    
+    :root{
+      --pad: clamp(20px, 3vw, 48px);
+      --text: #111;
+      --muted: #777;
+      --bg: #ffffff;
+      --accent: #111;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.35;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    .left {
+      padding: var(--pad);
+      padding-right: calc(var(--pad) / 2);
+    }
+    .left section {
+      padding: 16vh 0;
+    }
+    .left section:first-child { border-top: 0; padding-top: 12vh; }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    h1, h2 {
+      margin: 0 0 1.5rem 0;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+    }
+    h1 { font-size: clamp(42px, 6vw, 76px); }
+    h2 { font-size: clamp(28px, 3.5vw, 44px); }
+    p, li { 
+      font-size: clamp(16px, 1.5vw, 18px); 
+      color: #1a1a1a;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom-color 0.2s ease, color 0.2s ease;
+    }
+    
+    /* Animated links with scroll-based color changes */
+    a[href*="partdirector.ch"] {
+      color: hsl(220, 70%, 50%); /* Blue base */
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a[href*="partdirector.ch"]:hover {
+      border-bottom-color: currentColor;
+    }
+    
+    a[href*="spotlight.partdirector.ch"] {
+      color: hsl(160, 85%, 40%); /* Green base */
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a[href*="spotlight.partdirector.ch"]:hover {
+      border-bottom-color: currentColor;
+    }
+    
+    a[href*="ony.design"] {
+      color: hsl(0, 75%, 50%); /* Red base */
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a[href*="ony.design"]:hover {
+      border-bottom-color: currentColor;
+    }
+    
+    a[href*="artlebedev.ru"] {
+      color: hsl(260, 70%, 50%); /* Purple base */
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a[href*="artlebedev.ru"]:hover {
+      border-bottom-color: currentColor;
+    }
+    
+    a[href*="t.me"] {
+      color: hsl(190, 85%, 40%); /* Cyan base */
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a[href*="t.me"]:hover {
+      border-bottom-color: currentColor;
+    }
+    
+    a[href*="mailto"] {
+      color: hsl(25, 85%, 50%); /* Orange base */
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a[href*="mailto"]:hover {
+      border-bottom-color: currentColor;
+    }
+    
+    /* Default for any other links */
+    a:not([href*="partdirector.ch"]):not([href*="spotlight.partdirector.ch"]):not([href*="ony.design"]):not([href*="artlebedev.ru"]):not([href*="t.me"]):not([href*="mailto"]) {
+      color: var(--accent);
+      transition: color 0.6s ease, border-bottom-color 0.2s ease;
+    }
+    a:not([href*="partdirector.ch"]):not([href*="spotlight.partdirector.ch"]):not([href*="ony.design"]):not([href*="artlebedev.ru"]):not([href*="t.me"]):not([href*="mailto"]):hover {
+      border-bottom-color: var(--accent);
+    }
+    
+    /* Contact Overlay */
+    .contact-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    
+    .contact-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .close-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      line-height: 1;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    
+    .close-btn:hover {
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
+    
+    .contact-content {
+      text-align: center;
+      color: #fff;
+      transform: translateY(20px);
+      transition: transform 0.4s ease 0.1s;
+    }
+    
+    .contact-overlay.active .contact-content {
+      transform: translateY(0);
+    }
+    
+    .contact-header {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      margin: 0 0 3rem 0;
+      font-weight: 700;
+      line-height: 1;
+    }
+    
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .contact-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      padding: 1.5rem 2rem;
+      border: 2px solid #333;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      min-width: 280px;
+    }
+    
+    .contact-link:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-2px);
+    }
+    
+    .contact-method {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #999;
+      margin-bottom: 0.5rem;
+    }
+    
+    .contact-handle {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    @media (max-width: 768px) {
+      .close-btn {
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+      }
+      
+      .contact-header {
+        margin-bottom: 2rem;
+      }
+      
+      .contact-link {
+        min-width: 240px;
+        padding: 1.2rem 1.5rem;
+      }
+    }
+    ul { padding-left: 1.2em; margin: .5rem 0 0 0; }
+    .cta {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 14px 18px;
+      border: 2px solid var(--accent);
+      background: #fff;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: .01em;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      transition: transform .08s ease, background .2s ease, color .2s ease;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .cta-text {
+      display: inline-block;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .cta:hover { background: var(--accent); color: #fff; transform: translateY(-1px); }
+    .price {
+      display: grid;
+      gap: .6rem;
+      margin: 1rem 0 2rem;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid #e6e6e6;
+      background: #fff;
+    }
+    .price b { 
+      font-size: 18px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .price span {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    
+    .format {
+      margin: 1rem 0 2rem;
+      border: 1px solid #e6e6e6;
+      border-radius: 8px;
+      background: #fff;
+      overflow: hidden;
+    }
+    .format summary {
+      padding: 1.2rem 1.4rem;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      list-style: none;
+      outline: none;
+      transition: background-color 0.2s ease;
+    }
+    .format summary:hover {
+      background-color: #f8f8f8;
+    }
+    .format summary::-webkit-details-marker {
+      display: none;
+    }
+    .format summary::after {
+      content: '+';
+      float: right;
+      font-size: 20px;
+      font-weight: bold;
+      color: #666;
+      transition: transform 0.3s ease, color 0.2s ease;
+    }
+    .format[open] summary::after {
+      content: '−';
+      transform: rotate(180deg);
+      color: #333;
+    }
+    .format-content {
+      padding: 0 1.4rem;
+      border-top: 1px solid #f0f0f0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+    }
+    .format[open] .format-content {
+      max-height: 500px;
+      padding: 1.4rem 1.4rem;
+    }
+    .format-content p {
+      margin: 0.8rem 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .format-content p:first-child {
+      margin-top: 0;
+    }
+    .format-content ul {
+      margin: 0.5rem 0;
+      padding-left: 1.2em;
+    }
+    .format-content li {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0.3rem 0;
+    }
+    .format-content em {
+      color: #666;
+      font-style: italic;
+    }
+    
+    /* Footer */
+    .footer {
+      padding: 2rem var(--pad);
+      text-align: left;
+      background: #fff;
+    }
+    .footer p {
+      margin: 0;
+      font-size: 14px;
+      color: #666;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .right {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: var(--pad);
+      background: #fff;
+      border-left: none;
+    }
+
+    .stage {
+      position: relative;
+      width: min(560px, 92%);
+      height: min(78vh, 700px);
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 55%;
+      height: 45%;
+      transform: translate(-50%, 120%); /* start from bottom */
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.06);
+      display: grid;
+      place-items: center;
+      font: 700 14px/1.1 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      color: rgba(0,0,0,.75);
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+    .slide.in {
+      transform: translate(calc(-50% + var(--random-x, 0px)), calc(-50% + var(--random-y, 0px))) rotate(var(--random-rotate, 0deg));
+      opacity: 1;
+      transition: transform .8s cubic-bezier(.2,.9,.22,1), opacity .6s ease;
+    }
+    .slide.hidden {
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+    .slide.settle {
+      transform: translate(calc(-50% + var(--random-x, 0px)), calc(-50% + var(--random-y, 0px))) rotate(var(--random-rotate, 0deg)) scale(.98);
+      opacity: .98;
+      transition: transform .6s ease;
+    }
+    .slide::after {
+      content: attr(data-label);
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      font: 600 12px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      color: rgba(0,0,0,.75);
+      background: rgba(255,255,255,.72);
+      padding: 3px 6px;
+      border-radius: 4px;
+      border: 1px solid rgba(0,0,0,.06);
+      backdrop-filter: blur(3px);
+    }
+  </style>
+</head>
+<body>
+  <main class="split" role="main">
+    <div class="left">
+      <section class="block">
+        <h1>Дизайн-ресерч</h1>
+        <p>Мы помогаем маркетологам и дизайн-командам быстро собирать контекст: конкурентный ландшафт, актуальные референсы, тренды.</p>
+        <p>Результат — готовый отчёт в презентационном формате с выводами и аргументами, которые можно сразу показать коллегам и руководству.</p>
+        <a class="cta contact-btn" href="#"><span class="cta-text">Обсудить проект</span></a>
+      </section>
+      <section class="block">
+        <div class="eyebrow">Проблема</div>
+        <p>Чтобы запустить проект и сделать его качественно, нужно собрать контекст: изучить конкурентов, найти актуальные референсы, посмотреть на свежие тренды. На это уходит много времени и сил — команды неделями ищут примеры, собирают презентации, формулируют аргументы. В итоге процесс подготовки растягивается, а запуск проекта замедляется.</p>
+      </section>
+      <section class="block">
+        <div class="eyebrow">Наше решение</div>
+        <p>Мы в студии <a href="https://partdirector.ch" target="_blank" rel="noopener">Partdirector</a> разработали инструмент <a href="https://spotlight.partdirector.ch" target="_blank" rel="noopener">Design Spotlight</a>. Это библиотека свежих кейсов сотен дизайн-студий по всему миру, которая ежедневно пополняется новыми проектами.</p>
+        <p>С его помощью мы формируем подборку именно под ваш запрос, добавляем конкурентный анализ и краткие выводы. В итоге вы получаете не просто коллекцию картинок, а готовый материал для аргументации — в формате PDF + Figma, который можно сразу показывать команде и руководству.</p>
+      </section>
+      <section class="block">
+        <div class="eyebrow">Форматы</div>
+        <details class="format">
+          <summary><strong>Быстрый скан — 80 000 ₽</strong></summary>
+          <div class="format-content">
+            <p><strong>Срок:</strong> 2 дня</p>
+            <p><strong>Вы получаете:</strong></p>
+            <ul>
+              <li>Подборку актуальных референсов</li>
+              <li>Краткий инсайт-саммари с выводами</li>
+              <li>Презентацию в PDF + Figma, готовую для команды и руководства</li>
+            </ul>
+            <p><em>Подходит для быстрых решений, проверки идей, внутренних встреч</em></p>
+        </div>
+        </details>
+        <details class="format">
+          <summary><strong>Полный отчёт — 180 000 ₽</strong></summary>
+          <div class="format-content">
+            <p><strong>Срок:</strong> 4 дня</p>
+            <p><strong>Вы получаете:</strong></p>
+            <ul>
+              <li>Конкурентный ландшафт с чёткой структурой</li>
+              <li>Подборку ключевых референсов с комментариями</li>
+              <li>Стратегическую рамку: как использовать выводы для запуска проекта</li>
+              <li>Полноценную презентацию (PDF + Figma)</li>
+            </ul>
+            <p><em>Подходит для защиты бюджета, подготовки к редизайну продукта, обоснования маркетинговой кампании</em></p>
+        </div>
+        </details>
+      </section>
+      <section class="block">
+        <div class="eyebrow">Почему доверяют</div>
+        <ul>
+          <li>Опыт в разных ролях: работали и в больших компаниях (Яндекс: Авто.ру, Яндекс Пэй, Яндекс Сплит), и на стороне исполнителя (студии ONY и Студия Артемия Лебедева)</li>
+          <li>Знаем, как решаются задачи с разными бюджетами и масштабами проектов</li>
+          <li>Создали собственный инструмент <a href="https://spotlight.partdirector.ch" target="_blank" rel="noopener">Design Spotlight</a>, который ежедневно собирает новые проекты ведущих студий</li>
+          <li>В базе уже 15 000+ кейсов от 350 студий, и коллекция постоянно растёт</li>
+          <li>Делаем готовые отчёты за 2–4 дня — сразу в формате, удобном для презентации</li>
+        </ul>
+      </section>
+      <section class="block" id="order">
+        <div class="eyebrow">Давайте поговорим</div>
+        <h2>Подготовьте сильные аргументы и получите готовый контекст без долгих поисков.</h2>
+        <a class="cta contact-btn" href="#"><span class="cta-text">Обсудить проект</span></a>
+      </section>
+    </div>
+
+    <aside class="right" aria-hidden="true" role="complementary">
+      <div class="stage" id="stage"></div>
+    </aside>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Студия Partdirector, 2025</p>
+  </footer>
+  
+  <!-- Contact Overlay -->
+  <div class="contact-overlay" id="contactOverlay">
+    <button class="close-btn" id="closeBtn">×</button>
+    <div class="contact-content">
+      <h2 class="contact-header">Как с нами связаться</h2>
+      <div class="contact-links">
+        <a href="https://t.me/sashnovikova" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-method">Телеграм</span>
+          <span class="contact-handle">@sashnovikova</span>
+        </a>
+        <a href="mailto:sasha@partdirector.ch" class="contact-link">
+          <span class="contact-method">Почта</span>
+          <span class="contact-handle">sasha@partdirector.ch</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const stage = document.getElementById('stage');
+    const palettes = [
+      ['#F94144','#F3722C','#F8961E','#F9844A','#F9C74F','#90BE6D','#43AA8B','#577590'],
+      ['#0EA5E9','#22C55E','#EAB308','#F97316','#EF4444','#A855F7','#14B8A6','#F43F5E'],
+      ['#FFD166','#06D6A0','#EF476F','#118AB2','#073B4C','#F4A261','#2A9D8F','#E76F51']
+    ];
+    const palette = palettes[Math.floor(Math.random()*palettes.length)];
+    const rand = (min, max) => Math.floor(min + Math.random() * (max - min + 1));
+
+    let zCounter = 1;
+    let slideIndex = 0;
+
+    function createSlide(label='Slide'){
+      const el = document.createElement('div');
+      el.className = 'slide';
+      el.dataset.label = label;
+      el.style.background = palette[rand(0, palette.length - 1)];
+      el.style.zIndex = String(++zCounter);
+      
+      // Add random positioning and rotation
+      const randomX = rand(-8, 8); // random horizontal offset
+      const randomY = rand(-6, 6); // random vertical offset
+      const randomRotate = rand(-3, 3); // random rotation in degrees
+      
+      el.style.setProperty('--random-x', randomX + 'px');
+      el.style.setProperty('--random-y', randomY + 'px');
+      el.style.setProperty('--random-rotate', randomRotate + 'deg');
+      
+      return el;
+    }
+
+    function addSlide(){
+      slideIndex += 1;
+      const slide = createSlide(`Card ${slideIndex}`);
+      stage.appendChild(slide);
+      slide.getBoundingClientRect();
+      slide.classList.add('in');
+      slide.addEventListener('transitionend', () => {
+        slide.classList.add('settle');
+      }, { once: true });
+      const maxKeep = 6;
+      const children = Array.from(stage.children);
+      
+      // Gradually decrease opacity for cards as they get buried
+      children.forEach((child, index) => {
+        const position = children.length - 1 - index; // 0 = newest, higher = older
+        let opacity;
+        
+        if (position === 0) {
+          opacity = 1; // newest card, fully visible
+        } else if (position === 1) {
+          opacity = 0.7; // second card
+        } else if (position === 2) {
+          opacity = 0.4; // third card
+        } else if (position === 3) {
+          opacity = 0.2; // fourth card
+        } else {
+          opacity = 0; // hidden cards
+        }
+        
+        child.style.opacity = opacity;
+        child.classList.remove('hidden');
+      });
+      
+      // Remove excess cards
+      if (children.length > maxKeep){
+        for (let i = 0; i < children.length - maxKeep; i++){
+          stage.removeChild(children[i]);
+        }
+      }
+    }
+
+    // First 3 slides with delayed start and consistent timing
+    setTimeout(addSlide, 5000); // First card after 5 seconds
+    setTimeout(addSlide, 9000); // Second card after 9 seconds (4s later)
+    setTimeout(addSlide, 13000); // Third card after 13 seconds (4s later)
+
+    // Normal interval after
+    let interval = 4000; // 4 second intervals
+    setTimeout(() => {
+      setInterval(addSlide, interval);
+    }, 13000); // Start regular interval right after third card
+    
+    // CTA text animation
+    const ctaTexts = [
+      'Обсудить проект',
+      'Связаться с нами'
+    ];
+    let currentTextIndex = 0;
+    
+    function updateCtaText() {
+      const ctaElements = document.querySelectorAll('.cta-text');
+      ctaElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(-20px)';
+        
+        setTimeout(() => {
+          currentTextIndex = (currentTextIndex + 1) % ctaTexts.length;
+          element.textContent = ctaTexts[currentTextIndex];
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }, 200);
+      });
+    }
+    
+    // Start CTA text cycling after 2 seconds, then every 4 seconds
+    setTimeout(() => {
+      setInterval(updateCtaText, 4000);
+    }, 2000);
+    
+    // Contact overlay functionality
+    const contactOverlay = document.getElementById('contactOverlay');
+    const contactBtns = document.querySelectorAll('.contact-btn');
+    const closeBtn = document.getElementById('closeBtn');
+    
+    function openContactOverlay() {
+      contactOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeContactOverlay() {
+      contactOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    // Add click listeners to contact buttons
+    contactBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openContactOverlay();
+      });
+    });
+    
+    // Close button functionality
+    closeBtn.addEventListener('click', closeContactOverlay);
+    
+    // Close on overlay background click
+    contactOverlay.addEventListener('click', (e) => {
+      if (e.target === contactOverlay) {
+        closeContactOverlay();
+      }
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && contactOverlay.classList.contains('active')) {
+        closeContactOverlay();
+      }
+    });
+    
+    // Scroll-based color animation for links
+    function updateLinkColors() {
+      const scrollProgress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      const hueShift = scrollProgress * 60; // 60 degrees max shift
+      
+      // Update each link type with different base hues
+      const partdirectorLinks = document.querySelectorAll('a[href*="partdirector.ch"]:not([href*="spotlight"])');
+      partdirectorLinks.forEach(link => {
+        const newHue = (220 + hueShift) % 360;
+        link.style.color = `hsl(${newHue}, 70%, 50%)`;
+      });
+      
+      const spotlightLinks = document.querySelectorAll('a[href*="spotlight.partdirector.ch"]');
+      spotlightLinks.forEach(link => {
+        const newHue = (160 + hueShift * 1.2) % 360;
+        link.style.color = `hsl(${newHue}, 85%, 40%)`;
+      });
+      
+      const onyLinks = document.querySelectorAll('a[href*="ony.design"]');
+      onyLinks.forEach(link => {
+        const newHue = (0 + hueShift * 0.8) % 360;
+        link.style.color = `hsl(${newHue}, 75%, 50%)`;
+      });
+      
+      const artLinks = document.querySelectorAll('a[href*="artlebedev.ru"]');
+      artLinks.forEach(link => {
+        const newHue = (260 + hueShift * 1.5) % 360;
+        link.style.color = `hsl(${newHue}, 70%, 50%)`;
+      });
+      
+      const telegramLinks = document.querySelectorAll('a[href*="t.me"]');
+      telegramLinks.forEach(link => {
+        const newHue = (190 + hueShift * 0.7) % 360;
+        link.style.color = `hsl(${newHue}, 85%, 40%)`;
+      });
+      
+      const emailLinks = document.querySelectorAll('a[href*="mailto"]');
+      emailLinks.forEach(link => {
+        const newHue = (25 + hueShift * 1.3) % 360;
+        link.style.color = `hsl(${newHue}, 85%, 50%)`;
+      });
+    }
+    
+    // Throttled scroll listener for performance
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) return;
+      scrollTimeout = setTimeout(() => {
+        updateLinkColors();
+        scrollTimeout = null;
+      }, 16); // ~60fps
+    });
+    
+    // Initial color update
+    updateLinkColors();
+  </script>
+</body>
+</html>
